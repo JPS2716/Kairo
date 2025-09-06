@@ -1,0 +1,7 @@
+node_modules/
+
+# Environment variables
+.env
+
+# Optional: lock file (ignore if you don't want to commit lock file)
+package-lock.json

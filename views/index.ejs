@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KAIRO</title>
+  <link rel="stylesheet" href="/style/style.css" />
+  </head>
+  <body>
+   
+    <div class="background">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+    </div>
+    <div class="container">
+      <h2>ask KAIRO</h2>
+      <form action="/ask" method="POST">
+        <textarea name="question" rows="3" placeholder="Type your question here..."></textarea>
+        <br />
+        <button type="submit">Ask</button>
+      </form>
+
+      <% if (response) { %>
+        <div class="user-question">
+          <strong>You asked:</strong> <%= typeof question !== 'undefined' ? question : '' %>
+        </div>
+        <div class="response">
+          <strong>KAIRO:</strong> <%= response %>
+        </div>
+      <% } %>
+    </div>
+  </body>
+</html>
