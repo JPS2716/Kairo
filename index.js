@@ -42,8 +42,15 @@ app.post("/ask", async (req, res) => {
     res.render("index", { response: reply });
     }
     catch (error) {
-    console.error(error.response?.data || error.message);
-    res.render("index", { response: "Error occurred. Try again." });
+    let errorMsg = "Error occurred. Try again.";
+    if (error.response) {
+      errorMsg += `\nStatus: ${error.response.status}`;
+      errorMsg += `\n${JSON.stringify(error.response.data)}`;
+    } else {
+      errorMsg += `\n${error.message}`;
+    }
+    console.error(errorMsg);
+    res.render("index", { response: errorMsg });
   }
     });   
 
